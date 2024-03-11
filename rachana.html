@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My GitHub Portfolio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            transition: background-color 0.5s ease;
+        }
+        header {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #fff;
+        }
+        .greeting {
+            animation: fadeIn 1s ease forwards;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        nav {
+            background-color: #212529;
+            padding: 10px;
+            text-align: center;
+            border-bottom: 2px solid #343a40;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #6c757d;
+        }
+        section {
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        h2 {
+            color: #343a40;
+            text-align: center;
+        }
+        p {
+            color: #555;
+            text-align: center;
+        }
+        .education {
+            display: flex;
+            justify-content: space-around;
+            animation: fadeIn 1s ease forwards;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .circle {
+            width: 200px;
+            height: 200px;
+            background-color: #007bff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 24px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        .circle:hover {
+            transform: scale(1.1);
+        }
+        .education-grid {
+            display: flex;
+            justify-content: space-around;
+        }
+        .education-info {
+            width: 45%;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            background-color: #f9f9f9;
+            animation: fadeIn 1s ease forwards;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .education-info h3 {
+            text-align: center;
+            background-color: #777;
+            color: #fff;
+            padding: 10px 0;
+            margin: 0;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .education-info .education-subsection {
+            text-align: center;
+            padding: 20px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .education-info .education-subsection h4 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        .education-info .education-subsection p {
+            margin: 0;
+        }
+        .education-info .coursework {
+            padding: 20px;
+            border-top: 1px solid #dee2e6;
+            text-align: center;
+        }
+        .education-info .coursework h4 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        .education-info .coursework ul {
+            padding: 0;
+            list-style-type: disc;
+            text-align: left;
+        }
+        .education-info .coursework ul li {
+            margin-bottom: 5px;
+            color: #777;
+        }
+        .bachelors h3 {
+            background-color: #777;
+        }
+        .masters h3 {
+            background-color: #777;
+        }
+        .project-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+        }
+        .project {
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .project h3 {
+            color: #007bff;
+            margin-top: 0;
+        }
+        .project p {
+            color: #6c757d;
+            margin-bottom: 10px;
+        }
+        .project a {
+            color: #fff;
+            background-color: #007bff;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        .project a:hover {
+            background-color: #0056b3;
+        }
+        #intro {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        .profile-img:hover {
+            transform: scale(1.1);
+        }
+        .experience-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .experience-info {
+            width: calc(40% - 10px);
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .experience-info:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .experience-info h3 {
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .experience-info p {
+            text-align: center;
+            margin-bottom: 0;
+        }
+        .fadeIn {
+            animation: fadeIn 1s ease forwards;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Styles for Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+            justify-content: space-around;
+        }
+
+        .skill-item {
+            background-color: transparent;
+            border-radius: 50%;
+            padding: 20px;
+            text-align: center;
+            color: #000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            animation: pulse 2s infinite alternate;
+        }
+
+        .skill-item h3 {
+            color: #007bff; /* Blue color for headings */
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        .skill-item:hover {
+            transform: scale(1.1);
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="greeting">Hello! I'm Rachana Bomma</h1>
+        <p>Dive into the wacky world of my education, my adventures in experience-land, the mad skills I've picked up along the way, the wild projects I've tamed, and if you dare, make contact with this elusive creature known as me!</p>
+    </header>
+
+    <nav>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="intro">
+        <img src="https://via.placeholder.com/200" alt="Profile Picture" class="profile-img">
+        <h2>About Me</h2>
+        <p>Add your introduction here.</p>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <div class="education-grid">
+
+            <div class="education-info masters fadeIn">
+                <h3>Masters</h3>
+                <div class="education-details">
+                    <div class="education-subsection">
+                        <h4>University</h4>
+                        <p>Arizona State University, Tempe, Arizona</p>
+                    </div>
+                    <div class="education-subsection">
+                        <h4>Dates</h4>
+                        <p>Aug 2022 – May 2024</p>
+                    </div>
+                    <div class="education-subsection">
+                        <h4>Degree</h4>
+                        <p>Master of Science, Information Technology (GPA: 4.33)</p>
+                    </div>
+                </div>
+                <div class="coursework">
+                    <h4>Coursework</h4>
+                    <ul>
+                        <li>Data Visualization</li>
+                        <li>Big Data Analytics</li>
+                        <li>Advanced DBMS</li>
+                        <li>Cloud Architecture</li>
+                        <li>Principles of Computer Architecture</li>
+                        <li>Information Systems Development</li>
+                        <li>Introducing AI into CyberSecurity</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="education-info bachelors fadeIn">
+                <h3>Bachelors</h3>
+                <div class="education-details">
+                    <div class="education-subsection">
+                        <h4>University</h4>
+                        <p>Jawaharlal Nehru Technological University, Hyderabad, India</p>
+                    </div>
+                    <div class="education-subsection">
+                        <h4>Dates</h4>
+                        <p>Sep 2014 – May 2018</p>
+                    </div>
+                    <div class="education-subsection">
+                        <h4>Degree</h4>
+                        <p>Bachelor of Technology, Computer Science Engineering (83.8%)</p>
+                    </div>
+                </div>
+                <div class="coursework">
+                    <h4>Coursework</h4>
+                    <ul>
+                        <li>Operating Systems</li>
+                        <li>Computer Networks</li>
+                        <li>Data Warehousing & Data Mining</li>
+                        <li>Web Technologies</li>
+                        <li>Data Structures</li>
+                        <li>Unix & Shell Scripting</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="experience-grid">
+            <div class="experience-info fadeIn">
+    		<h3>Teaching Assistant</h3>
+   		<p>Arizona State University, Tempe, AZ</p>
+   		<p>Intermediate Database Management, Professor Robert Rucker</p>
+  		<p>Aug 2023 – Present</p>
+  		<ul>
+ 	       		<li>Assist students in understanding database concepts, SQL querying, database design principles, implementation of database management systems, and Object-Relational Mapping (ORM) techniques.</li>
+ 		</ul>
+	    </div>
+
+            <div class="experience-info fadeIn">
+    		<h3>Teaching Assistant</h3>
+   		<p>Arizona State University, Tempe, AZ</p>
+   		<p>Machine Learning in Business, Professor Asim Roy</p>
+  		<p>Aug 2023 – Dec 2024</p>
+  		<ul>
+ 	       		<li>Provided guidance and support to students in understanding fundamental concepts of machine learning, including supervised and unsupervised learning, regression, classification, and model evaluation.</li>
+ 		</ul>
+	    </div>
+            <div class="experience-info fadeIn" style="width: calc(100% - 20px); margin-bottom: 20px;">
+                <h3>Software Engineer</h3>
+                <p>Tata Consultancy Services, Hyderabad, India</p>
+   		<p>Project - Ericsson Cloud Execution Environment (CEE)</p>
+  		<p>Feb 2019 - July 2022</p>
+  		<ul>
+ 	       		<li>Pioneered the development and integration of CEE across diverse hardware vendors, including HP, DELL, BSP, and SDI, showcasing adaptability and expertise in delivering cutting-edge solutions to meet varying client requirements.</li>
+                        <li>Demonstrated expertise in overseeing end-to-end code builds, reviews, commits, testing, and successful deployments across a diverse spectrum of environments, showcasing a proven track record of ensuring software excellence and reliability.</li>
+			<li>Championed the integration of a cutting-edge Cloud Network Analyzer (CNA) tool, enabling the capture of packets down to the Open vSwitch (OVS)  level, thus bolstering network visibility and optimizing performance monitoring for enhanced system efficiency.</li>
+			<li>Configured IPv6 along with IPv4 on the CEE environment using Puppet and Ruby, which improved network efficiency by 25%.</li>
+			<li>Upgraded multiple virtual controllers in parallel mode using Ansible, reducing Virtual Cloud Infrastructure Controller upgrade time by 50% i.e, from 4 hours to 2 hours.</li>
+			<li>Implemented robust validation scripts tailored to verify precise configuration attributes within CEE, ensuring error-free deployments and mitigating potential issues, underscoring a commitment to delivering high-quality solutions and minimizing downtime by 30%.</li>
+			<li>Demonstrated a versatile skill set by proficiently handling end-to-end responsibilities, including installation, configuration, strategic customization, proactive maintenance, innovative feature development, and successful deployment of diverse projects using CI/CD pipelines, reflecting a hands-on approach and a track record of excellence in delivering impactful solutions.</li>
+ 		</ul>
+	     </div>
+             <div class="experience-info fadeIn">
+    		<h3>Associate Software Engineer</h3>
+   		<p>Tata Consultancy Services, Hyderabad, India</p>
+   		<p>Project - Ericsson Cloud Execution Environment (CEE)</p>
+  		<p>Feb 2019 - July 2022</p>
+  		<ul>
+ 	       		<li>Worked on diverse OpenStack components including Nova, Heat, Neutron, Cinder, Keystone, and Horizon, showcasing a deep understanding of the platform's architecture and driving impactful contributions to its enhancement.</li>
+			<li>Pioneered the development of a cutting-edge automation tool, streamlining the intricate installation process of OpenStack on virtual machines, resulting in accelerated deployment cycles and heightened operational efficiency.</li>
+			<li>Devised and executed an innovative solution in python to gather and filter errors emerging from active nodes on virtual machines, reducing debug time by 50%, enhancing system monitoring capabilities, and facilitating prompt issue resolution for seamless operations.</li>
+			<li>Designed Heat orchestration templates, enabling the effortless launch of multiple OpenStack instances on individual nodes which optimized resource utilization and reinforced scalability within the environment.</li>
+ 		</ul>
+	    </div>
+            <div class="experience-info fadeIn">
+    		<h3>Intern</h3>
+   		<p>Tata Consultancy Services, Hyderabad, India</p>
+   		<p>Eyeball Tracking using OpenCV and Machine Learning</p>
+  		<p>Dec 2017 - May 2018</p>
+  		<ul>
+ 	       		<li>Built a capstone project to determine eyeball direction using motion analysis by leveraging Python and OpenCV, demonstrating exceptional problem-solving abilities and a drive for innovation in applying advanced technologies to real-world challenges.</li>
+			<li>Lead the team which won the company's Best TBU Internship Project, 2018. </li>
+ 		</ul>
+	    </div>
+
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-item fadeIn">
+                <h3>Programing and Scripting</h3>
+                <ul>
+                    <p>Python (including libraries like TensorFlow, scikit-learn)</p>
+                    <p>C, C++, Java, PL/SQL</li>
+                    <p>Embedded Ruby, Unix Shell Scripting</p>
+                    <p>HTML, XML, PHP</p>
+                    <p>Spark, Scala</p>
+                </ul>
+            </div>
+            <div class="skill-item fadeIn">
+                <h3>DevOps Tools</h3>
+                <ul>
+                    <p>Continuous Integration/Continuous Deployment (Jenkins)</p>
+                    <p>Version Control (Git, Gerrit)</p>
+                    <p>Configuration Management (Puppet, Ansible)</p>
+                    <p>Continuous Monitoring (Zabbix)</p>
+                </ul>
+            </div>
+            <div class="skill-item fadeIn">
+                <h3>Database and Data Analysis</h3>
+                <ul>
+                    <p>SQL Server Management Studio</p>
+                    <p>Tableau, Pandas</p>
+                    <p>SQL, Machine Learning Algorithms</p>
+                    <p>Data Preprocessing</p>
+                </ul>
+            </div>
+            <div class="skill-item fadeIn">
+                <h3>Cloud and Infrastructure</h3>
+                <ul>
+                    <p>Openstack, Virtualization</p>
+                    <p>Containerization, Amazon Web Services</p>
+                </ul>
+            </div>
+            <div class="skill-item fadeIn">
+                <h3>Operating Systems</h3>
+                <ul>
+                    <p>MacOS, Linux/Unix, Windows</p>
+                </ul>
+            </div>
+            <div class="skill-item fadeIn">
+                <h3>Development Tools and Environments</h3>
+                <ul>
+                    <p>Visual Studio Code, Jupyter Notebooks</p>
+                    <p>Databricks, Agile Methodologies</p>
+                    <p>Software Engineering Tools (Spyder, Excel, Outlook)</p>
+                    <p>Software Development Lifecycle (SDLC)</p>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-container">
+            <div class="project">
+                <h3>Sentiment Analysis on Product Reviews</h3>
+                <p>Conducted an in-depth analysis of user reviews for multiple phone models employing a sophisticated lexicon-based approach (VADER) to discern and quantify overall sentiments for each product, including Negative, Neutral, Positive, and Compound. This strategic evaluation provided valuable insights to inform data-driven strategies and enhance product offerings.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="project">
+                <h3>Google Play Store App Analytics using Tableau</h3>
+                <p>Designed and implemented an analytics solution using Python and AWS tools to gauge user satisfaction through social media.Created a dashboard that gives a broad overview of the app's ratings, genres, installations, and uninstallations, as well as organized information on the app's reviews. This dashboard's primary purpose is to tell customers about the apps in various genres and categories, their pricing points, app sizes with various Android versions and the most recent upgrades
+</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="project">
+                <h3>Facility Management Salary Prediction User Dashboard</h3>
+                <p>The project involves developing a user dashboard utilizing machine learning techniques to predict salaries for facility management professionals based on IFMA's Global Salary and Compensation Report. By employing data cleaning methods and logistic regression, the model provides accessible insights into salary trends within the industry, while the deployment on AWS Lambda and integration with HTML code on S3 bucket enhances user accessibility.</p>
+                <a href="#">Learn More</a>
+            </div>
+        
+        </div>
+    </section>
+
+    <section id="contact">
+    <h2>Contact Information</h2>
+    <div class="contact-icons" style="text-align: center;">
+        <a href="mailto:rsbomma@asu.edu"><img src="email_logo.png" alt="Email"></a>
+        <a href="https://www.linkedin.com/in/rachanabomma/" target="_blank"><img src="linkedin_logo.png" alt="LinkedIn"></a>
+    </div>
+</section>
+</body>
+</html>
