@@ -81,19 +81,7 @@
                 transform: translateY(0);
             }
         }
-        .circle {
-            width: 200px;
-            height: 200px;
-            background-color: #007bff;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            font-size: 24px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
-        }
+        
         .circle:hover {
             transform: scale(1.1);
         }
@@ -122,7 +110,7 @@
         }
         .education-info h3 {
             text-align: center;
-            background-color: #777;
+            background-color: #64766A;
             color: #fff;
             padding: 10px 0;
             margin: 0;
@@ -135,7 +123,7 @@
             border-bottom: 1px solid #dee2e6;
         }
         .education-info .education-subsection h4 {
-            color: #007bff;
+            color: #64766A;
             margin-bottom: 10px;
         }
         .education-info .education-subsection p {
@@ -147,7 +135,7 @@
             text-align: center;
         }
         .education-info .coursework h4 {
-            color: #007bff;
+            color: #64766A;
             margin-bottom: 10px;
         }
         .education-info .coursework ul {
@@ -160,10 +148,10 @@
             color: #777;
         }
         .bachelors h3 {
-            background-color: #777;
+            background-color: 64766A;
         }
         .masters h3 {
-            background-color: #777;
+            background-color: 64766A;
         }
         .project-container {
             display: grid;
@@ -181,7 +169,7 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         .project h3 {
-            color: #007bff;
+            color: #64766A;
             margin-top: 0;
         }
         .project p {
@@ -190,7 +178,7 @@
         }
         .project a {
             color: #fff;
-            background-color: #007bff;
+            background-color: #64766A;
             padding: 8px 16px;
             border-radius: 5px;
             text-decoration: none;
@@ -235,7 +223,7 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         .experience-info h3 {
-            color: #007bff;
+            color: #64766A;
             text-align: center;
             margin-bottom: 10px;
         }
@@ -277,7 +265,7 @@
         }
 
         .skill-item h3 {
-            color: #007bff; /* Blue color for headings */
+            color: #64766A; 
         }
 
         @keyframes pulse {
@@ -293,33 +281,167 @@
             transform: scale(1.1);
             background-color: transparent;
         }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .education-info {
+            animation: fadeIn 0.5s ease-out;
+            transition: background-color 0.3s ease;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .education-info:hover {
+            background-color: #f0f0f0;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .award {
+            
+            color: #333;
+            width: 48%;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            margin-right: 2%;
+            animation: fadeIn 1s ease;
+            transition: background-color 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .award:hover {
+            background-color: #f0f0f0;
+        }
+
+        .award h3 {
+            text-align: center;
+            background-color: #64766A;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 0;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+        }
+    @keyframes fadeInLeft {
+        0% {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes bounceInDown {
+        0% {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+        /* Style for the large emoji */
+        .large-emoji {
+            position: fixed; /* Fix the position of the emoji */
+            top: 50%; /* Position the emoji at the middle vertically */
+            left: 20px; /* Adjust the distance from the left */
+            font-size: 100px; /* Adjust the size of the emoji */
+            transform: translateY(-50%); /* Center the emoji vertically */
+            z-index: 9999; /* Ensure the emoji is on top of other elements */
+            animation: moveUpDown 2s infinite alternate; /* Add animation for movement */
+        }
+
+        /* Style for the text */
+        .above-text {
+            position: fixed; /* Fix the position of the text */
+            top: 52%; /* Position the text above the emoji */
+            left: 110px; /* Adjust the distance from the left */
+            font-size: 20px; /* Adjust the font size */
+            color: #712E1E; /* Text color */
+            z-index: 9999; /* Ensure the text is on top of other elements */
+            text-align: left; /* Align the text to the left */
+            animation: moveUpDown 2s infinite alternate; /* Add animation for movement */
+            font-weight: bold;
+            font-style: oblique;
+        }
+
+        /* Keyframes for the movement animation */
+        @keyframes moveUpDown {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-20px); }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1 class="greeting">Hello! I'm Rachana Bomma</h1>
-        <p>Dive into the wacky world of my education, my adventures in experience-land, the mad skills I've picked up along the way, the wild projects I've tamed, and if you dare, make contact with this elusive creature known as me!</p>
-    </header>
+    <div class="large-emoji">💁‍♀️</div>
+    <div class="above-text" style="color: #712E1E;">what do u think?</div>
+
+
+    <header style="background-image: url('1.webp'); background-size: cover; background-position: center; color: #fff; text-align: center; padding: 50px;">
+    <h1 class="greeting">Hello! I'm Rachana Bomma</h1>
+    <p>Dive into the wacky world of my education, my adventures in experience-land, the mad skills I've picked up along the way, the wild projects I've tamed, and if you dare, make contact with this elusive creature known as me!</p>
+</header>
+
 
     <nav>
         <a href="#education">Education</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#awards">Awards</a>
         <a href="#contact">Contact</a>
     </nav>
 
-    <section id="intro">
-        <img src="IMG_2563.heic" alt="Profile Picture" class="profile-img">
-        <h2>About Me</h2>
-        <p>I'm an IT professional currently pursuing a Master's in Information Technology Management at Arizona State University. With a strong background in Python, DevOps, and cloud technologies, I've contributed to innovative projects as a Software Engineer at Tata Consultancy Services. I'm passionate about both Software Engineering and Data Science. Let's connect and explore opportunities in these fields together.</p>
-    </section>
+<section id="intro" style="position: relative;">
+    <img src="IMG_2563.heic" alt="Profile Picture" class="profile-img" style="border-radius: 50%; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); max-width: 100%; animation: fadeInLeft 1s ease;">
+    
+    <p style="font-size: 18px; color: #555; line-height: 1.6; animation: slideInUp 1s ease;">🎉🚀 Hey there! I'm Rachana Bomma, an IT professional currently on an exhilarating journey pursuing a Master's in Information Technology Management at Arizona State University. 🌟 With a stellar background in Python, DevOps, and cloud technologies, I've left my mark on innovative projects as a Software Engineer at Tata Consultancy Services. 🌈 Passionate about both Software Engineering and Data Science, I'm on a mission to explore boundless opportunities in these dynamic fields. Let's connect and embark on this exciting journey together!</p>
+    
+</section>
 
-    <section id="education">
+<section id="education">
         <h2>Education</h2>
         <div class="education-grid">
 
-            <div class="education-info masters fadeIn">
+            <div class="education-info masters">
                 <h3>Masters</h3>
                 <div class="education-details">
                     <div class="education-subsection">
@@ -349,7 +471,7 @@
                 </div>
             </div>
 
-            <div class="education-info bachelors fadeIn">
+            <div class="education-info bachelors">
                 <h3>Bachelors</h3>
                 <div class="education-details">
                     <div class="education-subsection">
@@ -505,22 +627,78 @@
             <div class="project">
                 <h3>Sentiment Analysis on Product Reviews</h3>
                 <p>Conducted an in-depth analysis of user reviews for multiple phone models employing a sophisticated lexicon-based approach (VADER) to discern and quantify overall sentiments for each product, including Negative, Neutral, Positive, and Compound. This strategic evaluation provided valuable insights to inform data-driven strategies and enhance product offerings.</p>
-                <a href="#">Learn More</a>
+                
             </div>
             <div class="project">
                 <h3>Google Play Store App Analytics using Tableau</h3>
                 <p>Designed and implemented an analytics solution using Python and AWS tools to gauge user satisfaction through social media.Created a dashboard that gives a broad overview of the app's ratings, genres, installations, and uninstallations, as well as organized information on the app's reviews. This dashboard's primary purpose is to tell customers about the apps in various genres and categories, their pricing points, app sizes with various Android versions and the most recent upgrades
 </p>
-                <a href="#">Learn More</a>
+                <a href="https://public.tableau.com/app/profile/sunil.pothu.raju/viz/Playstore_16696058396730/GooglePlayStoreDashboard">Learn More</a>
             </div>
             <div class="project">
                 <h3>Facility Management Salary Prediction User Dashboard</h3>
                 <p>The project involves developing a user dashboard utilizing machine learning techniques to predict salaries for facility management professionals based on IFMA's Global Salary and Compensation Report. By employing data cleaning methods and logistic regression, the model provides accessible insights into salary trends within the industry, while the deployment on AWS Lambda and integration with HTML code on S3 bucket enhances user accessibility.</p>
-                <a href="#">Learn More</a>
+            
             </div>
         
         </div>
     </section>
+
+    <section id="awards">
+        <h2 style="text-align: center; color: #333; padding: 10px; border-radius: 5px;">Awards</h2>
+        
+        <div class="row">
+
+            <!-- First row with two boxes -->
+            <div class="award">
+                <h3>Engineering Graduate Fellowship</h3>
+                <p>Jan 2024</p>
+                <p>Associated with Arizona State University</p>
+                <p>These awards are funded by the Ira A. Fulton Schools of Engineering graduate program fee and are awarded to current and incoming MS students enrolled in the Fulton Schools (domestic and international). These awards are merit-based.</p>
+                <p>Field: FSE</p>
+                <p>Student type: MS students (incoming and current)</p>
+                <p>Eligibility: Domestic and international students</p>
+            </div>
+
+            <div class="award">
+                <h3>Harold and Lucille Dunn Memorial Engineering Scholarship</h3>
+                <p>Aug 2023</p>
+                <p>Associated with Arizona State University</p>
+                <p>This award supports full-time graduate students enrolled in the Ira A. Fulton Schools of Engineering who demonstrate outstanding academic performance and are in need of financial assistance to complete their course of study.</p>
+                <p>Student type: Graduate student</p>
+                <p>Eligibility: Domestic or international students who demonstrate outstanding academic performance.</p>
+            </div>
+        </div>
+
+        <!-- Second row with three boxes -->
+        <div class="row">
+
+            <div class="award">
+                <h3>Star Performer of the Project</h3>
+                <p>Jan 2021</p>
+                <p>Associated with Tata Consultancy Services</p>
+                <p>Recipient of the Employee of the Month award for exceptional contributions in optimizing network efficiency within the CEE environment. Leveraged expertise in Puppet and Ruby to successfully configure IPv6 alongside IPv4, resulting in a remarkable 25% improvement in network efficiency. Demonstrated proactive problem-solving skills and dedication to enhancing infrastructure performance.</p>
+            </div>
+
+            <div class="award">
+                <h3>On the Spot Award</h3>
+                <p>Mar 2020</p>
+                <p>Associated with Tata Consultancy Services</p>
+                <p>I was honored with an On the Spot Award for spearheading the integration of a state-of-the-art Cloud Network Analyzer (CNA) tool. This initiative significantly enhanced network visibility by enabling packet capture down to the Open vSwitch (OVS) level. As a result, we optimized performance monitoring, leading to heightened system efficiency.</p>
+            </div>
+
+            <div class="award">
+                <h3>Best TBU Internship Project</h3>
+                <p>May 2018</p>
+                <p>Associated with Tata Consultancy Services</p>
+                <p>Recipient of the Best TBU Internship Project award for developing a capstone project focused on determining eyeball direction through motion analysis. Leveraged Python and OpenCV to create innovative solutions, showcasing exceptional problem-solving skills and a keen drive for applying advanced technologies to tackle real-world challenges.</p>
+            </div>
+
+        </div>
+    </section>
+</body>
+</html>
+
 
     <section id="contact">
     <h2>Contact Information</h2>
